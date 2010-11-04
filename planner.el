@@ -7,7 +7,7 @@
 ;;;_ + Package description
 
 ;; Copyright (C) 2001, 2003, 2004, 2005,
-;;   2006, 2007, 2008 Free Software Foundation, Inc.
+;;   2006, 2007, 2008, 2010 Free Software Foundation, Inc.
 ;; Parts copyright (C) 2004, 2008 David D. Smith (davidsmith AT acm DOT org)
 ;; Parts copyright (C) 2004, 2008 Yvonne Thomson (yvonne AT netbrains DOT com DOT au)
 ;; Parts copyright (C) 2004, 2008 Maciej Kalisak (mac AT cs DOT toronto DOT edu)
@@ -29,7 +29,7 @@
 ;; Description: Use Emacs for life planning
 ;; URL: http://www.wjsullivan.net/PlannerMode.html
 ;; Bugs: https://gna.org/bugs/?group=planner-el
-;; Compatibility: Emacs20, Emacs21, Emacs22, XEmacs21
+;; Compatibility: Emacs21, Emacs22, Emacs23, XEmacs21
 
 ;; This file is part of Planner.  It is not part of GNU Emacs.
 
@@ -825,6 +825,13 @@ Uses the `derived-mode-parent' property of the symbol to trace backwards."
 (defalias 'planner-line-beginning-position 'muse-line-beginning-position)
 (defalias 'planner-line-end-position 'muse-line-end-position)
 
+;;; Handling diary renaming that was official as of 23.1
+;;; Drop this when 23 is the oldest we support.
+(when (< emacs-major-version 23)
+  (defalias 'diary-list-entries 'list-diary-entries)
+  (defalias 'diary-list-entries-hook 'list-diary-entries-hook)
+  (defalias 'diary-include-other-diary-files 'include-other-diary-files))
+
 ;;; Copied from subr.el
 (defun planner-copy-overlay (o)
   "Return a copy of overlay O."
@@ -1020,11 +1027,11 @@ The list has the same form as returned by `list-diary-entries', but
 this function tries to undo the changes which `list-diary-entries'
 does to the diary buffer."
   (require 'diary-lib)
-  ;; The code to restore the buffer is copied from `include-other-diary-files'
+  ;; The code to restore the buffer was copied from `include-other-diary-files'
   (save-window-excursion
     (save-excursion
       (let* ((diary-file file)
-             (list-diary-entries-hook '(include-other-diary-files))
+             (diary-list-entries-hook '(diary-include-other-diary-files))
              (diary-display-hook 'ignore)
              (diary-hook nil)
              (d-buffer (find-buffer-visiting diary-file))
@@ -1032,7 +1039,7 @@ does to the diary buffer."
                                (set-buffer d-buffer)
                                (buffer-modified-p))))
         (unwind-protect
-            (list-diary-entries date (or number 1))
+            (diary-list-entries date (or number 1))
           (let ((d-buffer (find-buffer-visiting diary-file)))
             (when d-buffer
               (set-buffer d-buffer)
