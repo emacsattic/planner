@@ -5509,8 +5509,8 @@ BibTeX URLs are of the form @samp{bibtex:file/name:key}.
 @cindex @file{planner-bookmark.el}, using
 
 @file{planner-bookmark.el} uses the @file{remember} package to create a
-note whenever you create a bookmark (@pxref{Bookmarks, Bookmarks,
-Emacs}). For more information about @file{remember}, please check out
+note whenever you create a bookmark (@pxref{Bookmarks, Bookmarks,,
+emacs}) For more information about @file{remember}, please check out
 
 @itemize
 @item
