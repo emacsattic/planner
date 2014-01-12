@@ -14,7 +14,7 @@
 @copying
 This manual is for Planner version 3.42.
 
-Copyright @copyright{} 2001, 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.@*
+Copyright @copyright{} 2001, 2004, 2005, 2006, 2007, 2008, 2009, 2014 Free Software Foundation, Inc.@*
 Parts copyright @copyright{} 2005 Jim Ottaway@*
 Parts copyright @copyright{} 2005 Dryice Dong Liu
 
@@ -485,9 +485,9 @@ code will be used.
 @subsection Installing from Debian
 @cindex Debian package
 
-Debian packages for Planner, Muse, and Remember are available in Debian
-proper as the @code{planner-el}, @code{muse-el}, and @code{remember-el}
-packages, respectively.
+Debian packages for Planner, Muse, and Remember are available in
+Debian proper as the @code{planner-el} and @code{muse-el} packages,
+respectively.
 
 If you wish to try experimental packages, add the following lines to
 your @file{/etc/apt/sources.list}
@@ -502,7 +502,6 @@ Then, do the following steps as root:
 apt-get update
 apt-get install muse-el
 apt-get install planner-el
-apt-get install remember-el
 @end example
 
 If you get some warning about the key not being trusted, you can either
@@ -1297,8 +1296,7 @@ anything you want in this section, or remove it from your
 @code{planner-day-page-template} entirely.
 
 You may be interested in @file{remember-planner.el}, part of the
-Remember package (see @inforef{Top, remember-el, remember-el}). You
-can download Remember at @uref{http://gna.org/projects/remember-el/}).
+Remember package (see @inforef{Top, remember, remember}).
 
 @code{remember-planner.el} makes it easy to create notes from anywhere
 in Emacs, and it uses the same context-sensing code that Planner uses.
@@ -5511,7 +5509,7 @@ BibTeX URLs are of the form @samp{bibtex:file/name:key}.
 @cindex @file{planner-bookmark.el}, using
 
 @file{planner-bookmark.el} uses the @file{remember} package to create a
-note whenever you create a bookmark (see @inforef{Bookmarks, Bookmarks,
+note whenever you create a bookmark (@pxref{Bookmarks, Bookmarks,
 Emacs}). For more information about @file{remember}, please check out
 
 @itemize
