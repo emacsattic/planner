@@ -485,9 +485,8 @@ code will be used.
 @subsection Installing from Debian
 @cindex Debian package
 
-Debian packages for Planner, Muse, and Remember are available in
-Debian proper as the @code{planner-el} and @code{muse-el} packages,
-respectively.
+Debian packages for Planner and Muse are available in Debian proper as
+the @code{planner-el} and @code{muse-el} packages, respectively.
 
 If you wish to try experimental packages, add the following lines to
 your @file{/etc/apt/sources.list}
