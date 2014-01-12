@@ -1922,11 +1922,10 @@ second will create it every Friday.
 
 You can schedule tasks in a variety of ways. This module uses the same
 syntax for specifying when tasks will be scheduled as the Emacs diary
-uses for appointments and events. See @ref{Date Formats, the GNU Emacs
-Manual, Date Formats,emacs, the GNU Emacs Manual}, and @ref{Sexp Diary
-Entries, the GNU Emacs Lisp Reference Manual, Sexp Diary
-Entries,elisp, the GNU Emacs Lisp Reference Manual}, for a full
-description of the possibilities.
+uses for appointments and events. See @xref{Date Formats,, Date
+Formats, emacs, the GNU Emacs Manual}, and @xref{Sexp Diary Entries,,
+Sexp Entries and the Fancy Diary Display, emacs, the GNU Emacs
+Manual}, for a full description of the possibilities.
 
 By default, planner-cyclic creates multiple tasks if you let tasks build
 up (that is, the next Tuesday rolls around and you @emph{still} haven't
