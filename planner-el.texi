@@ -5516,9 +5516,6 @@ Emacs}). For more information about @file{remember}, please check out
 @item
 @uref{http://www.emacswiki.org/cgi-bin/wiki/RememberMode} -
 EmacsWiki.org page
-@item
-@uref{http://sacha.free.net.ph/notebook/doc/dev/remember/remember.html}
-- Online info documentation
 @end itemize
 
 Configure remember according to the instructions in
