@@ -1295,7 +1295,7 @@ anything you want in this section, or remove it from your
 @code{planner-day-page-template} entirely.
 
 You may be interested in @file{remember-planner.el}, part of the
-Remember package. (see @pxref{Top, Remember,,remember})
+Remember package (see @pxref{Top, Remember,,remember})
 
 @code{remember-planner.el} makes it easy to create notes from anywhere
 in Emacs, and it uses the same context-sensing code that Planner uses.
